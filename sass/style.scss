@@ -1,0 +1,165 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// Global
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #E5E5E5;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+li {
+  list-style: none;
+}
+
+.chat {
+  position: relative;
+  width: 1050px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 15px 20px 0px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 92px;
+  height: 100%;
+  background-color: #2F3640;
+  border-radius: 25px 0 0 25px;
+  color: #FFF;
+  padding: 1.5rem 1.5rem 2rem;
+  transition: .5s;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &-brand {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  &-toggle {
+    font-size: 1.25rem;
+    padding: .75rem;
+    cursor: pointer;
+  }
+
+  &-logo {
+    color: #FFF;
+    font-weight: 600;
+  }
+  
+  &-link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: .75rem;
+    padding: .75rem;
+    color: #FFF;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #2E86DE;
+    }
+  }
+
+  &-icon {
+    font-size: 1.25rem;
+  }
+
+  &-name {
+    font-size: .875rem;
+  }
+}
+
+// Collapse
+.collapse {
+  grid-template-columns: 20px max-content 1fr;
+
+  &-link {
+    justify-self: flex-end;
+    transition: .5s;
+  }
+
+  &-menu {
+    display: none;
+    padding: .75rem 2.25rem;
+    transition: .5s;
+  }
+
+  &-sublink {
+    color: #B6CEFC;
+    font-size: .875rem;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
+}
+
+// Show Collapse
+.showCollapse {
+  display: block;
+  transition: .5s;
+}
+
+// Expander menu
+.expander-menu {
+  width: calc(92px + 6.2rem);
+}
+
+// Active links
+.active {
+  background-color: #2E86DE;
+}
+
+// Rotate icon
+.rotate {
+  transform: rotate(180deg);
+}
+
+.show {
+  background-color: #fff;
+}
+
+// Content
+.chat-content {
+  display: flex;
+  width: calc(100% - 92px);
+  height: 100%;
+  margin-left: auto;
+  border-radius: 0px 25px 25px 0px;
+}
+
+@import 'roomUser';
+@import 'conversation';

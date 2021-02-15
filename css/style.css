@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #E5E5E5;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.chat {
+  position: relative;
+  width: 1050px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 15px 20px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 92px;
+  height: 100%;
+  background-color: #2F3640;
+  border-radius: 25px 0 0 25px;
+  color: #FFF;
+  padding: 1.5rem 1.5rem 2rem;
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.nav-brand {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.nav-toggle {
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+.nav-logo {
+  color: #FFF;
+  font-weight: 600;
+}
+.nav-link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 0.75rem;
+  padding: 0.75rem;
+  color: #FFF;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nav-link:hover {
+  background-color: #2E86DE;
+}
+.nav-icon {
+  font-size: 1.25rem;
+}
+.nav-name {
+  font-size: 0.875rem;
+}
+
+.collapse {
+  grid-template-columns: 20px max-content 1fr;
+}
+.collapse-link {
+  justify-self: flex-end;
+  transition: 0.5s;
+}
+.collapse-menu {
+  display: none;
+  padding: 0.75rem 2.25rem;
+  transition: 0.5s;
+}
+.collapse-sublink {
+  color: #B6CEFC;
+  font-size: 0.875rem;
+}
+.collapse-sublink:hover {
+  color: #FFF;
+}
+
+.showCollapse {
+  display: block;
+  transition: 0.5s;
+}
+
+.expander-menu {
+  width: calc(92px + 6.2rem);
+}
+
+.active {
+  background-color: #2E86DE;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.show {
+  background-color: #fff;
+}
+
+.chat-content {
+  display: flex;
+  width: calc(100% - 92px);
+  height: 100%;
+  margin-left: auto;
+  border-radius: 0px 25px 25px 0px;
+}
+
+.room {
+  flex: 1;
+  background-color: #dcdde190;
+}
+.room-text, .room-name,
+.room .user {
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+}
+.room-text {
+  width: 100%;
+  height: 60px;
+}
+.room-name {
+  width: 100%;
+  height: 50px;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #2F3640;
+}
+.room-user {
+  width: 100%;
+  height: calc(100% - (60px + 50px));
+  overflow-y: scroll;
+}
+.room-user .user {
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1.2px solid rgba(51, 51, 51, 0.2);
+  cursor: pointer;
+}
+.room-user .user-profil {
+  position: relative;
+}
+.room-user .user-img {
+  display: block;
+  width: 50px;
+  border-radius: 50px;
+}
+.room-user .user-name {
+  margin-right: 1.8rem;
+}
+.room-user .user-name h1 {
+  font-size: 0.9rem;
+  color: #2F3640;
+}
+.room-user .user-name p {
+  font-size: 0.765rem;
+  color: #2F3640;
+}
+.room-user .user-status {
+  position: absolute;
+  top: -10px;
+  right: -3px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 50px;
+  background-color: #EE5253;
+  border: 2px solid #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.room-user .user-status p {
+  color: #FFF;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.room-user .user-info p {
+  font-size: 0.7rem;
+  padding: 0.25rem 0;
+}
+.room-user .user-info p:nth-child(1) {
+  color: #2F3640;
+}
+.room-user .user-info p:nth-child(2) {
+  color: #2F3640;
+}
+.room-user .user-active {
+  background-color: #1DD1A1;
+}
+.room-user .user-online p:nth-child(1) {
+  color: #1DD1A1;
+}
+.room-user .user-online p:nth-child(2) {
+  color: #2E86DE;
+}
+
+.conversation {
+  flex: 2;
+  border-radius: 0px 25px 25px 0px;
+}
+.conversation-header, .conversation-user {
+  display: flex;
+  align-items: center;
+}
+.conversation-header {
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 0.8rem;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+}
+.conversation-name {
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+.conversation-online {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+  background-color: #1DD1A1;
+}
+.conversation-offline {
+  background-color: #EE5253;
+}
+.conversation-img {
+  display: block;
+  width: 40px;
+  border-radius: 50px;
+}
+.conversation-call-img {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.conversation #tab-1-content,
+.conversation #tab-2-content,
+.conversation #tab-3-content,
+.conversation #tab-4-content,
+.conversation #tab-5-content {
+  display: none;
+  opacity: 0;
+}
+.conversation #tab-1-header,
+.conversation #tab-2-header,
+.conversation #tab-3-header,
+.conversation #tab-4-header,
+.conversation #tab-5-header {
+  display: none;
+  opacity: 0;
+}
+.conversation .showTalk,
+.conversation .showHeader {
+  display: flex !important;
+  opacity: 1 !important;
+}
+.conversation .talks {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+  margin: 0 auto;
+  overflow-y: scroll;
+  padding: 0 0.8rem;
+}
+.conversation .talks .talk {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+.conversation .talks .talk-msg {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 10px;
+  margin: 0 8px;
+  line-height: 23px;
+}
+.conversation .talks .talk-msg-left {
+  border-radius: 2px 15px 15px 15px;
+}
+.conversation .talks .talk-msg-right {
+  border-radius: 15px 2px 15px 15px;
+}
+.conversation .talks .talk-right {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+.conversation .talks .talk-right p {
+  background: #2F3640;
+  color: #FFF;
+}
+.conversation .talks .talk-left P {
+  background: #d8d8d8;
+  color: #000;
+}
+.conversation .talks .talk-img {
+  width: 35px;
+  border-radius: 50%;
+  margin-bottom: auto;
+}
+.conversation .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 77px;
+  padding: 0 0.8rem;
+}
+.conversation .form-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  background: #f1f1f1;
+}
+.conversation .form-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  padding-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.conversation .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 100%;
+}
+.conversation .form-group textarea {
+  width: 80%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 14px;
+  padding-top: 10px;
+  background: none;
+  resize: none;
+  border: none;
+  outline: none;
+}
+.conversation .form-group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #FFF;
+  font-size: 22px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background-color: #2F3640;
+  cursor: pointer;
+}
+.conversation .form-send, .conversation .form-smile {
+  color: #2F3640;
+}
+.conversation .form-smile {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

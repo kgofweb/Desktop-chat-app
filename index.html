@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Desktop chat app</title>
+</head>
+<body>
+
+  <main class="chat">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <nav class="nav">
+        <div>
+          <div class="nav-brand">
+            <ion-icon name="menu-outline" class="nav-toggle" id="nav-toggle"></ion-icon>
+            <a href="#" class="nav-logo">Chat App</a>
+          </div>
+          <div class="nav-list">
+            <a href="#" class="nav-link">
+              <ion-icon name="home-outline" class="nav-icon"></ion-icon>
+              <span class="nav-name">Dashboard</span>
+            </a>
+            <a href="#" class="nav-link active">
+              <ion-icon name="chatbubbles-outline" class="nav-icon"></ion-icon>
+              <span class="nav-name">Messenger</span>
+            </a>
+  
+            <div class="nav-link collapse">
+              <ion-icon name="folder-outline" class="nav-icon"></ion-icon>
+              <span class="nav-name">Projects</span>
+  
+              <ion-icon name="chevron-down-outline" class="collapse-link"></ion-icon>
+  
+              <ul class="collapse-menu">
+                <a href="#" class="collapse-sublink">Data</a>
+                <a href="#" class="collapse-sublink">Group</a>
+                <a href="#" class="collapse-sublink">Members</a>
+              </ul>
+            </div>
+            <a href="#" class="nav-link">
+              <ion-icon name="settings-outline" class="nav-icon"></ion-icon>
+              <span class="nav-name">Settings</span>
+            </a>
+          </div>
+        </div>
+  
+        <a href="#" class="nav-link">
+          <ion-icon name="log-out-outline" class="nav-icon"></ion-icon>
+          <span class="nav-name">Log Out</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class='chat-content' id="room-mg">
+      <!-- Room -->
+      <div class="room">
+        <div class="room-text">
+          <p>Room Name</p>
+        </div>
+        <div class="room-name">
+          <p>Node JS</p>
+        </div>
+        <div class="room-user">
+          <div id="tab-1" class="user show">
+            <div class="user-profil">
+              <img src="img/avatar1.jpg" class="user-img">
+              <div class="user-status user-active"></div>
+            </div>
+            <div class="user-name">
+              <h1>Floyd Miles</h1>
+              <p>Help me open the door.</p>
+            </div>
+            <div class="user-info  user-online">
+              <p>Now</p>
+              <p>Online</p>
+            </div>
+          </div>
+
+          <div id="tab-2" class="user">
+            <div class="user-profil">
+              <img src="img/avatar4.png" class="user-img">
+              <div class="user-status">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="user-name">
+              <h1>Devon Lane</h1>
+              <p>Help me open the door.</p>
+            </div>
+            <div class="user-info">
+              <p>8h</p>
+              <p>Offline</p>
+            </div>
+          </div>
+
+          <div id="tab-3" class="user">
+            <div class="user-profil">
+              <img src="img/avatar3.png" class="user-img">
+              <div class="user-status user-active"></div>
+            </div>
+            <div class="user-name">
+              <h1>Wade Warren</h1>
+              <p>Help me open the door.</p>
+            </div>
+            <div class="user-info user-online">
+              <p>Now</p>
+              <p>Online</p>
+            </div>
+          </div>
+
+          <div id="tab-4" class="user">
+            <div class="user-profil">
+              <img src="img/avatar5.png" class="user-img">
+              <div class="user-status">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="user-name">
+              <h1>Sabrina Carpenter</h1>
+              <p>Help me open the door.</p>
+            </div>
+            <div class="user-info">
+              <p>22h</p>
+              <p>Offline</p>
+            </div>
+          </div>
+          <div id="tab-5" class="user">
+            <div class="user-profil">
+              <img src="img/avatar6.png" class="user-img">
+              <div class="user-status">
+                <p>1</p>
+              </div>
+            </div>
+            <div class="user-name">
+              <h1>Robert Fox</h1>
+              <p>Help me open the door.</p>
+            </div>
+            <div class="user-info">
+              <p>22h</p>
+              <p>Offline</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversations -->
+      <div class="conversation">
+        <header id="tab-1-header" class="conversation-header showHeader">
+          <div class="conversation-user">
+            <img src="img/avatar1.jpg" class="conversation-img">
+            <p class="conversation-name">Floyd Miles</p>
+            <div class="conversation-online"></div>
+          </div>
+          <div class="conversation-call">
+            <ion-icon name="call-outline" class="conversation-call-img"></ion-icon>
+            <ion-icon name="videocam-outline" class="conversation-call-img"></ion-icon>
+          </div>
+        </header>
+        <header id="tab-2-header" class="conversation-header">
+          <div class="conversation-user">
+            <img src="img/avatar4.png" class="conversation-img">
+            <p class="conversation-name">Devone Lane</p>
+            <div class="conversation-online conversation-offline"></div>
+          </div>
+          <div class="conversation-call">
+            <ion-icon name="call-outline" class="conversation-call-img"></ion-icon>
+            <ion-icon name="videocam-outline" class="conversation-call-img"></ion-icon>
+          </div>
+        </header>
+        <header id="tab-3-header" class="conversation-header">
+          <div class="conversation-user">
+            <img src="img/avatar3.png" class="conversation-img">
+            <p class="conversation-name">Wade Warren</p>
+            <div class="conversation-online"></div>
+          </div>
+          <div class="conversation-call">
+            <ion-icon name="call-outline" class="conversation-call-img"></ion-icon>
+            <ion-icon name="videocam-outline" class="conversation-call-img"></ion-icon>
+          </div>
+        </header>
+        <header id="tab-4-header" class="conversation-header">
+          <div class="conversation-user">
+            <img src="img/avatar5.png" class="conversation-img">
+            <p class="conversation-name">Sabrina Carpenter</p>
+            <div class="conversation-online conversation-offline"></div>
+          </div>
+          <div class="conversation-call">
+            <ion-icon name="call-outline" class="conversation-call-img"></ion-icon>
+            <ion-icon name="videocam-outline" class="conversation-call-img"></ion-icon>
+          </div>
+        </header>
+        <header id="tab-5-header" class="conversation-header">
+          <div class="conversation-user">
+            <img src="img/avatar6.png" class="conversation-img">
+            <p class="conversation-name">Robert Fox</p>
+            <div class="conversation-online conversation-offline"></div>
+          </div>
+          <div class="conversation-call">
+            <ion-icon name="call-outline" class="conversation-call-img"></ion-icon>
+            <ion-icon name="videocam-outline" class="conversation-call-img"></ion-icon>
+          </div>
+        </header>
+
+        <div id="tab-1-content" class="talks showTalk">
+          <div class="talk talk-left">
+            <img src="img/avatar1.jpg" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar1.jpg" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar1.jpg" class="talk-img">
+            <p class="talk-msg talk-msg-left">Au clavier...</p>
+          </div>
+        </div>
+        <div id="tab-2-content" class="talks">
+          <div class="talk talk-left">
+            <img src="img/avatar4.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar4.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar4.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nisi est atque commodi illum sit doloribus facere id. Repellat placeat maiores explicabo repudiandae perferendis? Tenetur.</p>
+          </div>
+        </div>
+        <div id="tab-3-content" class="talks">
+          <div class="talk talk-left">
+            <img src="img/avatar3.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Serious ??</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar3.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Yes Yes, or u don't beleive me ?</p>
+          </div>
+        </div>
+        <div id="tab-4-content" class="talks">
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar5.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar5.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Lorem ipsum dolor sit amet.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+        </div>
+        <div id="tab-5-content" class="talks">
+          <div class="talk talk-left">
+            <img src="img/avatar6.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar6.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+          </div>
+          <div class="talk talk-right">
+            <p class="talk-msg talk-msg-right">Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis.</p>
+            <img src="img/avatar2.jpg" class="talk-img">
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar6.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">OK Thank you man</p>
+          </div>
+          <div class="talk talk-left">
+            <img src="img/avatar6.png" class="talk-img">
+            <p class="talk-msg talk-msg-left">Bye</p>
+          </div>
+        </div>
+
+        <form class="form">
+          <div class="form-input">
+            <div class="form-logo">
+              <ion-icon name="attach-outline"></ion-icon>
+            </div>
+    
+            <div class="form-group">
+              <textarea placeholder="Type message..." minlength="1" maxlength="1500"></textarea>
+              <ion-icon name="mic-outline" class="form-smile"></ion-icon>
+              <ion-icon name="happy-outline" class="form-smile"></ion-icon>
+
+              <button type="submit">
+                <ion-icon name="send-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <!-- JS -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
