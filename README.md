@@ -6,3 +6,6 @@ Techno used:
     HTML
     SASS
     JavaScript
+
+
+Little things
